@@ -15,7 +15,7 @@ public class Advice {
 	@Column(name="ADVICE_ID")
 	private long id; // Schema: ADVICE_ID BIGSERIAL PRIMARY KEY
 
-	@Column(name="Advice")
+	@Column(name="ADVICE")
 	private String advice; // Schema: CONTENT VARCHAR(127)
 	
 	@Column(name="LIKES")
