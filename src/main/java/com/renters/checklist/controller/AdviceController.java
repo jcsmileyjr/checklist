@@ -15,9 +15,9 @@ public class AdviceController {
 	@Autowired
 	AdviceService adviceService;
 	
-	@GetMapping("/")
-	public String TestMessage() {
-		return "Hello World";
+	@GetMapping("/advice")
+	public String TestAdviceMessage() {
+		return "Hello World - Advice Controller";
 	}
 	
 	@GetMapping("/getAdvice")
