@@ -20,15 +20,11 @@ public class AdviceService {
 		return adviceRepository.findAll();
 	}
 	
-	public void updateLikes (Advice currentAdvice, Long id) {
-//		adviceRepository.deleteById(id);
-//		Advice newAdvice = new Advice();
-//		newAdvice.setAdvice(currentAdvice.getAdvice());
-//		newAdvice.setLikes(currentAdvice.getLikes() + 1);
-//		adviceRepository.save(newAdvice);
+	public Advice updateLikes (Advice currentAdvice, Long id) {
 		Advice newAdvice = adviceRepository.findById(id).get();
 		newAdvice.setLikes(currentAdvice.getLikes() + 1);
 		adviceRepository.save(newAdvice);
+		return newAdvice;
 	}
 
 }
