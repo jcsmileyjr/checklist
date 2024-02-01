@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Table(name="ADVICE")
 public class Advice {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ADVICE_ID")
 	private long id; // Schema: ADVICE_ID BIGSERIAL PRIMARY KEY
 
@@ -21,6 +21,16 @@ public class Advice {
 	@Column(name="LIKES")
 	private int likes;
 
+	
+	public Advice() {
+		super();
+	}
+
+	public Advice(String advice, int likes) {
+		super();
+		this.advice = advice;
+		this.likes = likes;
+	}
 
 	public int getLikes() {
 		return likes;

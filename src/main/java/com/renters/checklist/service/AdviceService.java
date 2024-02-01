@@ -26,5 +26,10 @@ public class AdviceService {
 		adviceRepository.save(newAdvice);
 		return newAdvice;
 	}
+	
+	public void createAdvice (Advice currentAdvice) {
+		Advice newAdvice = adviceRepository.save( new Advice(currentAdvice.getAdvice(), currentAdvice.getLikes()));
+		System.out.println("advice: " + newAdvice.getId());
+	}
 
 }

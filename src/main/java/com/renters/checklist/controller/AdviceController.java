@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +34,12 @@ public class AdviceController {
 	public Advice updatelikes (@RequestBody Advice advice) {
 		System.out.println("update likes: " + advice.getLikes());
 		return adviceService.updateLikes(advice, advice.getId());
+	}
+	
+	@PostMapping("/createAdvice")
+	public void createAdvice (@RequestBody Advice advice) {
+		System.out.println("create new advice" + advice.getAdvice());
+		adviceService.createAdvice(advice);
 	}
 
 }
