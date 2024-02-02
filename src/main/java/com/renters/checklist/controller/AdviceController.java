@@ -37,9 +37,10 @@ public class AdviceController {
 	}
 	
 	@PostMapping("/createAdvice")
-	public void createAdvice (@RequestBody Advice advice) {
+	public Iterable<Advice> createAdvice (@RequestBody Advice advice) {
 		System.out.println("create new advice" + advice.getAdvice());
 		adviceService.createAdvice(advice);
+		return adviceService.getAllAdvice();
 	}
 
 }

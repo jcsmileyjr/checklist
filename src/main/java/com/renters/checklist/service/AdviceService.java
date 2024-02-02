@@ -27,9 +27,10 @@ public class AdviceService {
 		return newAdvice;
 	}
 	
-	public void createAdvice (Advice currentAdvice) {
+	public Iterable<Advice> createAdvice (Advice currentAdvice) {
 		Advice newAdvice = adviceRepository.save( new Advice(currentAdvice.getAdvice(), currentAdvice.getLikes()));
 		System.out.println("advice: " + newAdvice.getId());
+		return adviceRepository.findAll();
 	}
 
 }
