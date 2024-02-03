@@ -17,4 +17,9 @@ public class ChecklistBService {
 		return checklistBRepository.findAll();
 	}
 	
+	public void createChecklistBItem (ChecklistB checkItem) {
+		ChecklistB newCheckItem = checklistBRepository.save(new ChecklistB(checkItem.getItem()));
+		System.out.println("New ChecklistB item: " + newCheckItem.getItem());
+	}
+	
 }

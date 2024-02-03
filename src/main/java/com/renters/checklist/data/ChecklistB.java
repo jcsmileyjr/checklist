@@ -12,12 +12,21 @@ import jakarta.persistence.Table;
 public class ChecklistB {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CHECKLIST_ID")
 	private long id;
 	
 	@Column(name="ITEM")
 	private String item;
+	
+	public ChecklistB() {
+		super();
+	}
+
+	public ChecklistB(String item) {
+		super();
+		this.item = item;
+	}
 
 	public String getItem() {
 		return item;
