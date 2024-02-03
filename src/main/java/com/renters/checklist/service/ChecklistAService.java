@@ -17,4 +17,10 @@ public class ChecklistAService {
 		return checklistARespository.findAll();
 	}
 	
+	public void createChecklistAItem(ChecklistA checkItem) {
+		ChecklistA newCheckItem = checklistARespository.save(new ChecklistA(checkItem.getItem()));
+		System.out.println("new ChecklistA item: " + newCheckItem.getItem());
+		//return checklistARespository.findAll();
+	}
+	
 }

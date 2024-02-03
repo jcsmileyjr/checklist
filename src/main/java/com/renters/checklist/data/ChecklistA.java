@@ -11,10 +11,19 @@ import jakarta.persistence.Table;
 @Table(name="CHECKLISTA")
 public class ChecklistA {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CHECKLIST_ID")
 	private long id; // Schema: CHECKLIST_ID BIGSERIAL PRIMARY KEY
 	
+	public ChecklistA() {
+		super();
+	}
+	
+	public ChecklistA(String item) {
+		super();
+		this.item = item;
+	}
+
 	public long getId() {
 		return id;
 	}
